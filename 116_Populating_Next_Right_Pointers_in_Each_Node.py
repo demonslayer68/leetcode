@@ -12,9 +12,10 @@ class Node:
 
 
 class Solution:
-    next_by_level = {}
+    next_by_level = {}  # stores the current next node for a given level
 
     def connect(self, root: 'Optional[Node]', level=0) -> 'Optional[Node]':
+        # just reinitializing, if the class is reused for multiple test cases
         if not level:
             self.next_by_level = {}
         if root:
