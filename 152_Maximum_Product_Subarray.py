@@ -11,4 +11,3 @@ class Solution:
             print(currentpos, currentneg, maxprod)
         return maxprod
 
-    
