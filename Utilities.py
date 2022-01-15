@@ -56,3 +56,7 @@ print(a)
 # convert binary to int
 a = int('101', 2)
 print(a)
+
+#list with same element repeated
+steps = [-1] * 10
+
