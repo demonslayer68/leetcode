@@ -12,7 +12,12 @@
 - Recursive is always top -> bottom, iterative is generally bottom -> top
 - In some cases where number of calls is extremely high, iteration works much faster than recursion. Example [here](https://leetcode.com/problems/jump-game/).
 
-### DFS / matrix
-- The default method for matrix problems is dfs
+## Tree / matrix / graph
+- The usual default method for matrix problems is DFS/BFS
 - Use a global variable to track visited / modified nodes: [example](https://leetcode.com/problems/set-matrix-zeroes/)
-- Ff  process has n states, use new state = state + n along with (new state % n ) to store old and new without using additional space like [here](https://leetcode.com/problems/game-of-life/)
+- if a process has n states, use new state = state + n along with (new state % n ) to store old and new without using additional space like [here](https://leetcode.com/problems/game-of-life/)
+- basic graph algorithms
+  - DFS
+  - BFS
+  - flood fill
+  - [union find](https://www.youtube.com/watch?v=mHz-mx-8lJ8)
