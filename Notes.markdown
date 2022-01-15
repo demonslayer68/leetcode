@@ -1,13 +1,18 @@
 # Leetcode notes
 
 ### General notes
-- refer to the Utilities script for generic python syntax
-- write the if else blocks in order of usage, to further minimize runtime
-- generally try to use local variables for dp
-- if you use class variables for dp, you should reinitialize it inside the main func, in case multiple test cases are run using the same class instance
-- use a deque(doubly ended queue) for stack, heap, queue problems( it has O(1) access time ) - [deque](https://www.geeksforgeeks.org/deque-in-python/)
+- Refer to the Utilities script for generic python syntax
+- Write the if else blocks in order of usage, to further minimize runtime
+- Generally try to use local variables for dp
+- If you use class variables for dp, you should reinitialize it inside the main func, in case multiple test cases are run using the same class instance
+- Use a deque(doubly ended queue) for stack, heap, queue problems( it has O(1) access time ) - [deque](https://www.geeksforgeeks.org/deque-in-python/)
+- Bitwise operators are explained [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
 
 ### DP
-- recursive is always top -> bottom, iterative is generally bottom -> top
+- Recursive is always top -> bottom, iterative is generally bottom -> top
 - In some cases where number of calls is extremely high, iteration works much faster than recursion. Example [here](https://leetcode.com/problems/jump-game/).
 
+### DFS / matrix
+- The default method for matrix problems is dfs
+- Use a global variable to track visited / modified nodes: [example](https://leetcode.com/problems/set-matrix-zeroes/)
+- Ff  process has n states, use new state = state + n along with (new state % n ) to store old and new without using additional space like [here](https://leetcode.com/problems/game-of-life/)
