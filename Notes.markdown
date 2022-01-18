@@ -21,3 +21,7 @@
   - BFS
   - flood fill
   - [union find](https://www.youtube.com/watch?v=mHz-mx-8lJ8)
+  - topological sort
+    - there are 2 ways to do topological sort:
+      1) Do a dfs like recursion. Append all nodes which have no leaves. reverse the list in the end. code [here](https://www.geeksforgeeks.org/topological-sorting/)
+      2) maintain a queue of root nodes and iteratively remove edges and add new root nodes like [here](https://stackoverflow.com/questions/4168/graph-serialization/4577#4577)
