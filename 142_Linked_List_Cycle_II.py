@@ -9,6 +9,7 @@ class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
             return None
+        # this is a standard slow fast method to detect a cycle
         slow = head.next
         fast = head.next.next
         while fast and fast.next:
