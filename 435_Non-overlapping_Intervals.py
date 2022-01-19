@@ -11,4 +11,3 @@ class Solution:
             else:
                 end = intervals[i][1]
         return remove
-    
