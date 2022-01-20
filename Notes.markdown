@@ -7,6 +7,7 @@
 - If you use class variables for dp, you should reinitialize it inside the main func, in case multiple test cases are run using the same class instance
 - Use a deque(doubly ended queue) for stack, heap, queue problems( it has O(1) access time ) - [deque](https://www.geeksforgeeks.org/deque-in-python/)
 - Bitwise operators are explained [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
+- x // y gives floor division. You can do -(-x // y) to get ceil.
 
 ### DP
 - Recursive is always top -> bottom, iterative is generally bottom -> top
