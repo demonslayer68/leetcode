@@ -3,6 +3,7 @@ class Solution:
         mem = {}
 
         def recursive_pick(start, end, total):
+            # if only one pile is left, return that
             if start == end:
                 return piles[start]
             # since each player plays optimally, we pick the side where the optimal score for the next pick is smallest
