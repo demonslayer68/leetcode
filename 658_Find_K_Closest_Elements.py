@@ -1,5 +1,5 @@
 class Solution:
-    def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+    def findClosestElements(self, arr: list[int], k: int, x: int) -> list[int]:
         output = []
         # find element with binary search
         min = 0
