@@ -7,12 +7,22 @@
 - If you use class variables for dp, you should reinitialize it inside the main func, in case multiple test cases are run using the same class instance
 - Use a deque(doubly ended queue) for stack, heap, queue problems( it has O(1) access time ) - [deque](https://www.geeksforgeeks.org/deque-in-python/)
 - Bitwise operators are explained [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
+- x // y gives floor division. You can do -(-x // y) to get ceil.
 
 ### DP
 - Recursive is always top -> bottom, iterative is generally bottom -> top
 - In some cases where number of calls is extremely high, iteration works much faster than recursion. Example [here](https://leetcode.com/problems/jump-game/).
 
-### DFS / matrix
-- The default method for matrix problems is dfs
+## Tree / matrix / graph
+- The usual default method for matrix problems is DFS/BFS
 - Use a global variable to track visited / modified nodes: [example](https://leetcode.com/problems/set-matrix-zeroes/)
-- Ff  process has n states, use new state = state + n along with (new state % n ) to store old and new without using additional space like [here](https://leetcode.com/problems/game-of-life/)
+- if a process has n states, use new state = state + n along with (new state % n ) to store old and new without using additional space like [here](https://leetcode.com/problems/game-of-life/)
+- basic graph algorithms
+  - DFS
+  - BFS
+  - flood fill
+  - [union find](https://www.youtube.com/watch?v=mHz-mx-8lJ8)
+  - topological sort
+    - there are 2 ways to do topological sort:
+      1) Do a dfs like recursion. Append all nodes which have no leaves. reverse the list in the end. code [here](https://www.geeksforgeeks.org/topological-sorting/)
+      2) maintain a queue of root nodes and iteratively remove edges and add new root nodes like [here](https://stackoverflow.com/questions/4168/graph-serialization/4577#4577)

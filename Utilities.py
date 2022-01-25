@@ -5,6 +5,10 @@ import typing
 x = 222 if 0 else 111
 print(x)
 
+#min and max int
+maxim = float('inf')
+minim = float('-inf')
+
 # comprehension
 input_list = [1, 2, 3, 4, 4, 5, 6, 7, 7]
 list_using_comp = [var for var in input_list if var % 2 == 0]
@@ -24,7 +28,6 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-
 
 # Definition for a linked list.
 class LinkedList:
