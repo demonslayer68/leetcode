@@ -10,7 +10,7 @@ class Solution:
         nextq = deque()
         q.append(len(arr) - 1)
         jumpcount = 0
-        viselems = set()
+        viselems = set() # track this separately, to reduce time
         for i in range(len(arr)):
             elems[arr[i]].append(i)
         while q:
@@ -18,11 +18,13 @@ class Solution:
             if not index:
                 return jumpcount
             visited.add(index)
+            # if elem not visited, append all elements
             if arr[index] not in viselems:
                 for x in elems[arr[index]]:
                     if x not in visited:
                         nextq.append(x)
             viselems.add(arr[index])
+            # add 2 adjacent nodes, if not visited
             if index - 1 >= 0 and arr[index - 1] not in viselems and index - 1 not in visited:
                 nextq.append(index - 1)
             if index + 1 < len(arr) and arr[index + 1] not in viselems and index + 1 not in visited:
