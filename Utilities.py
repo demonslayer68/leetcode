@@ -60,6 +60,5 @@ print(a)
 a = int('101', 2)
 print(a)
 
-#list with same element repeated
+# list with same element repeated
 steps = [-1] * 10
-
