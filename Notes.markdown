@@ -8,12 +8,13 @@
 - Use a deque(doubly ended queue) for stack, heap, queue problems( it has O(1) access time ) - [deque](https://www.geeksforgeeks.org/deque-in-python/)
 - Bitwise operators are explained [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
 - x // y gives floor division. You can do -(-x // y) to get ceil.
+- Use a Trie for dictionary / word storage type problems: [example here](https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/)
 
 ### DP
 - Recursive is always top -> bottom, iterative is generally bottom -> top
 - In some cases where number of calls is extremely high, iteration works much faster than recursion. Example [here](https://leetcode.com/problems/jump-game/).
 
-## Tree / matrix / graph
+### Tree / matrix / graph
 - The usual default method for matrix problems is DFS/BFS
 - Use a global variable to track visited / modified nodes: [example](https://leetcode.com/problems/set-matrix-zeroes/)
 - if a process has n states, use new state = state + n along with (new state % n ) to store old and new without using additional space like [here](https://leetcode.com/problems/game-of-life/)
@@ -26,3 +27,13 @@
     - there are 2 ways to do topological sort:
       1) Do a dfs like recursion. Append all nodes which have no leaves. reverse the list in the end. code [here](https://www.geeksforgeeks.org/topological-sorting/)
       2) maintain a queue of root nodes and iteratively remove edges and add new root nodes like [here](https://stackoverflow.com/questions/4168/graph-serialization/4577#4577)
+
+### Bit manipulation
+- bit manipulation has 4 basic operations
+  - AND: 0011 & 0110 = 0010
+  - OR: 0011 | 0110 = 0111
+  - NOT: 10 = 1010. !1010 = 10101 = (-16 + 4 + 1 ) = -11(includes reversing the first sign bit)
+    - the easiest way to get NOT of a number is (-(x+1)). example(-(10+1)) for above
+  - XOR: 0110 ^ 0011 = 0101
+    - the use of XOR is to get the original number back. if x = a ^ b. a = x ^ b and b = x ^ a
+  - more detail [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
