@@ -8,6 +8,14 @@
 - Use a deque(doubly ended queue) for stack, heap, queue problems( it has O(1) access time ) - [deque](https://www.geeksforgeeks.org/deque-in-python/)
 - Bitwise operators are explained [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
 - x // y gives floor division. You can do -(-x // y) to get ceil.
+- iterating through dict
+  - use for i in dict to get keys
+  - use for i in dict.values() to get values
+  - use key, value in dict.items() to get the pairs
+
+### data structures
+- you can add a default value for a dict using: cont.get(value, 0)
+  - This is a replacement for defaultdict()
 - Use a Trie for dictionary / word storage type problems: [example here](https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/)
 
 ### DP
