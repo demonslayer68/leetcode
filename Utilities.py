@@ -1,6 +1,22 @@
 import collections
 import typing
 
+# declaration
+# tuple - immutable array. Faster more efficiet, speifically as dict key
+a = (1, 2, 2, 3)
+# list - mutable array
+b = [1, 2, 2, 3]
+# set - mutable unique elements. access is much faster
+c = {1, 2, 3}
+# dict - struct
+d = { "a" : 1, "b" : 2}
+type(d)
+print(type(a), a, type(b), b, type(c), c, type(d), d)
+
+#string operations
+s = 'a@bcx'
+arr = s.split("@")
+
 # ternary operator
 x = 222 if 0 else 111
 print(x)
@@ -62,3 +78,22 @@ print(a)
 
 # list with same element repeated
 steps = [-1] * 10
+
+
+
+#### code snippets
+# for a given arr, generate the next smallest element larger than element for each elem.
+# i.e. index j such that i < j and arr[i] <= arr[j] and arr[j] is the smallest possible value.
+
+arr = [10,13,12,14,15]
+def getnext(sortedind):
+    stack = []
+    result = [None] * len(arr)
+    for i in sortedind:
+        while stack and i > stack[-1]:
+            result[stack.pop()] = i
+        stack.append(i)
+    return result
+
+sortedind = sorted(range(len(arr)), key=lambda x: arr[x])
+next_largest = getnext(sortedind)
