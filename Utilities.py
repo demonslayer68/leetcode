@@ -13,9 +13,17 @@ d = { "a" : 1, "b" : 2}
 type(d)
 print(type(a), a, type(b), b, type(c), c, type(d), d)
 
-#string operations
+### string operations
+# split
 s = 'a@bcx'
 arr = s.split("@")
+
+#remove all occurrences of a char
+new_s = ''.join(s.split('-'))
+new_s = new_s.upper()
+
+#splice a string
+new_s[i:i+k]
 
 # ternary operator
 x = 222 if 0 else 111
@@ -29,6 +37,10 @@ minim = float('-inf')
 input_list = [1, 2, 3, 4, 4, 5, 6, 7, 7]
 list_using_comp = [var for var in input_list if var % 2 == 0]
 print("Output List using list comprehensions:", list_using_comp)
+
+# creating dict using comprehension
+
+filtered_patterns = {key: value for key, value in patterns.items() if key in choices}
 
 input_list = [1, 2, 3, 4, 5, 6, 7]
 dict_using_comp = {var: var ** 3 for var in input_list if var % 2 != 0}
@@ -79,6 +91,8 @@ print(a)
 # list with same element repeated
 steps = [-1] * 10
 
+# sort by dict key
+sorted_ent = sorted(entropies, key=entropies.get, reverse=True)[:20]
 
 
 #### code snippets
