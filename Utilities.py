@@ -18,12 +18,20 @@ print(type(a), a, type(b), b, type(c), c, type(d), d)
 s = 'a@bcx'
 arr = s.split("@")
 
-#remove all occurrences of a char
+# remove all occurrences of a char
 new_s = ''.join(s.split('-'))
 new_s = new_s.upper()
 
 #splice a string
 new_s[i:i+k]
+
+### List operations
+# reverse a string
+list.reverse()
+
+### dict operations
+# sort dict by values
+sorted_ent = sorted(entropies, key=entropies.get, reverse=True)[:20]
 
 # ternary operator
 x = 222 if 0 else 111
@@ -90,10 +98,6 @@ print(a)
 
 # list with same element repeated
 steps = [-1] * 10
-
-# sort by dict key
-sorted_ent = sorted(entropies, key=entropies.get, reverse=True)[:20]
-
 
 #### code snippets
 # for a given arr, generate the next smallest element larger than element for each elem.
