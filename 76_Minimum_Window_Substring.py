@@ -1,31 +1,33 @@
+from collections import Counter
 from collections import defaultdict
-
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        indset = set()
-        track = defaultdict(list)
-        count = defaultdict(int)
-        tsize = len(t)
-        start = len(s)
-        minstring = ""
-        for elem in t:
-            count[elem] += 1
-        for i in range(len(s)):
-            if count[s[i]] > 0:
-                start = min(i, start)
-                count[s[i]] -= 1
-                tsize -= 1
-                track[s[i]].append(i)
-                indset.add(i)
-            elif track[s[i]]:
-                elem = track[s[i]].pop(0)
-                indset.remove(elem)
-                indset.add(i)
-                track[s[i]].append(i)
-                if start == elem:
-                    start = min(indset)
-            if not tsize:
-                if not minstring or len(minstring) > i - start + 1:
-                    minstring = s[start:i + 1:1]
-        return minstring
+        if not t:
+            return ""
+        cnt = Counter(t)
+        output = ""
+        right = 0
+        left = 0
+        while right < len(s):
+            if s[right] in cnt:
+                # if you find a present char, subtract its count
+                cnt[s[right]] -= 1
+                # if all counts are less than 0, then keep moving left, till count comes back > 0
+                if cnt[s[right]] <= 0 and max(cnt.values()) <= 0:
+                    while left <= right:
+                        #print(left, right)
+                        if s[left] in cnt:
+                            cnt[s[left]] += 1
+                            # this means, if we remove left, then remaining string does not contain all chars
+                            # ie, this combination of left and right is the min substring with all chars
+                            # so take the length of this and see if its smallest. Then go back to moving right again
+                            if cnt[s[left]] > 0:
+                                if output == "" or len(output) > right - left + 1:
+                                    output = s[left:right+1]
+                                    #print(output)
+                                left += 1
+                                break
+                        left += 1
+            right += 1
+        return output
