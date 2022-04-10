@@ -29,6 +29,10 @@ new_s[i:i+k]
 # reverse a string
 list.reverse()
 
+# sort a list based on another list
+# below code sorts elements of Y based on X
+[x for _, x in sorted(zip(X, Y) key=lambda pair: pair[0])]
+
 ### dict operations
 # sort dict by values
 sorted_ent = sorted(entropies, key=entropies.get, reverse=True)[:20]
