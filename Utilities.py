@@ -23,7 +23,7 @@ new_s = ''.join(s.split('-'))
 new_s = new_s.upper()
 
 #splice a string
-new_s[i:i+k]
+new_s[i:i+k]    
 
 ### List operations
 # reverse a string
