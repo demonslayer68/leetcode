@@ -1,27 +1,20 @@
 class Solution:
-    def gameOfLife(self, board: list[list[int]]) -> None:
+    def gameOfLife(self, board: List[List[int]]) -> None:
         """
-        Do not return anything, modify board in-place instead.
-        0 > dead
-        1 > alive
-        2 > dead -> alive
-        3 > alive -> dead
+        The idea is to use 2^0 place to store current state and 2^1 place to store next state.
+        so we do //2 for next state and %2 for current state.
+        Rest is straight forward
         """
         for i in range(len(board)):
             for j in range(len(board[0])):
-                # for each cell, process the neighbours
-                # subtracting this, since the point itself gets counted in the loop
-                count = -1 * board[i][j]
-                for x in range(max(0, i - 1), min(len(board), i + 2)):
-                    for y in range(max(0, j - 1), min(len(board[0]), j + 2)):
-                        count += board[x][y] % 2
-                # in other cases, new = old
-                if board[i][j] and (count > 3 or count < 2):
-                    board[i][j] = 3
-                elif not board[i][j] and count == 3:
-                    board[i][j] = 2
+                neighbours = -1 * board[i][j]
+                for x in range(max(i - 1, 0), min(len(board) - 1, i + 1) + 1):
+                    for y in range(max(j - 1, 0), min(len(board[0]) - 1, j + 1) + 1):
+                        neighbours += board[x][y] % 2
 
-        # convert 2,3 to 1,0 respectively
+                if ((neighbours == 2 or neighbours == 3) and board[i][j]) or (neighbours == 3 and not board[i][j]):
+                    board[i][j] += 2
+
         for i in range(len(board)):
             for j in range(len(board[0])):
-                board[i][j] = min(board[i][j], 3 - board[i][j])
+                board[i][j] = board[i][j] // 2
