@@ -45,3 +45,7 @@
   - XOR: 0110 ^ 0011 = 0101
     - the use of XOR is to get the original number back. if x = a ^ b. a = x ^ b and b = x ^ a
   - more detail [here](https://www.geeksforgeeks.org/python-bitwise-operators/)
+
+### Hashing
+There are some interesting things on hashing [here](https://en.wikipedia.org/wiki/Hash_table#Open_addressing), [here](https://leetcode.com/problems/design-hashset/solution/) and [here](https://leetcode.com/problems/design-hashmap/solution/)
+Mainly, implement a hash table using a large key for modulo(preferable primary number)
